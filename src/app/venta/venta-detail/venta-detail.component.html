@@ -1,0 +1,25 @@
+<div class="row">
+  <h4 class="text-primary">{{ uid }}</h4>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Kilos</th>
+      <th>Pesos</th>
+      <th>Ventas</th>
+      <th>Visitas</th>
+      <th>%</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let venta of ventas | async">
+      <td>{{ venta.fecha }}</td>
+      <td>{{ venta.kilos | number:'1.2-2' }}</td>
+      <td>{{ venta.pesos | currency:'USD':true }}</td>
+      <td>{{ venta.ventas }}</td>
+      <td>{{ venta.visitas }}</td>
+      <td [ngClass]="{ 'text-danger': (venta.ventas / venta.visitas) < 0.5 }">{{ (venta.ventas / venta.visitas) | percent:'1.2-2' }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

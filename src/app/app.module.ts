@@ -10,6 +10,9 @@ import { LoginComponent } from './auth/login/login.component';
 import { AngularFireAuthProvider } from 'angularfire2/auth';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AngularFireDatabaseProvider } from 'angularfire2/database';
+import { VentasListComponent } from './venta/ventas-list.component';
+import { VentaDetailComponent } from './venta/venta-detail/venta-detail.component';
+import { HeaderComponent } from './dashboard/header/header.component';
 
 const config = {
   apiKey: 'AIzaSyDAVyyjGwsll0Wlvv-3paVM0Go4F31-Hng',
@@ -24,7 +27,10 @@ const config = {
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    VentasListComponent,
+    VentaDetailComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
